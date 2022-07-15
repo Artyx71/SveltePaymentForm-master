@@ -16,9 +16,7 @@
 	const getRequestURL = 'http://127.0.0.1:5000/api/cards';
 	const postRequestURL = 'http://127.0.0.1:5000/api/card';
 	function sendGetRequest(method, url) {
-		return fetch(url).then((response) => {
-			return response.json();
-		});
+		return fetch(url);
 	}
 	sendGetRequest('GET', getRequestURL);
 
