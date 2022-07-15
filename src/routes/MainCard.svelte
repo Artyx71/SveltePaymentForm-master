@@ -20,12 +20,9 @@
 	}
 	sendGetRequest('GET', getRequestURL);
 
-	function sendPostRequest(method, url, body = null) {
-		const headers = {
-			'Content-Type': 'application/json'
-		};
-		return fetch(url, {
-			method: method,
+	async function sendPostRequest() {
+		const res = await fetch(postRequestURL, {
+			method: 'POST',
 			body: JSON.stringify({
 				cardNumber,
 				cardYear,
@@ -33,8 +30,26 @@
 				cvcCode
 			})
 		});
+
+		const json = await res.json();
+		result = JSON.stringify(json);
 	}
-	sendPostRequest('POST', postRequestURL);
+
+	// function sendPostRequest(method, url, body = null) {
+	// 	const headers = {
+	// 		'Content-Type': 'application/json'
+	// 	};
+	// 	return fetch(url, {
+	// 		method: method,
+	// 		body: JSON.stringify({
+	// 			cardNumber,
+	// 			cardYear,
+	// 			cardMonth,
+	// 			cvcCode
+	// 		})
+	// 	});
+	// }
+	// sendPostRequest('POST', postRequestURL);
 </script>
 
 <main class="main__card">
@@ -129,7 +144,9 @@
 			</label>
 
 			<div class="main__card-submit container">
-				<label for="cardSubmit"><input type="submit" value={$t('homepage.button')} /></label>
+				<label for="cardSubmit"
+					><input type="submit" on:click={sendPostRequest} value={$t('homepage.button')} /></label
+				>
 			</div>
 		</div>
 	</form>
