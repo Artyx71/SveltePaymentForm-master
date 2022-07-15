@@ -1,0 +1,177 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+ul {
+	list-style-type: none;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+body {
+	font-size: 14px;
+	padding: 10px;
+	font-family: 'Merriweather', serif;
+}
+
+input {
+	border: 2px solid #d3d3d3;
+	transition: 0.3s;
+}
+input:focus {
+	border: 2px solid;
+	border-color: rgba(255, 182, 193, 0.8);
+	border-radius: 3px;
+	outline: none;
+}
+
+.container {
+	margin: 2rem auto;
+	width: 100%;
+	max-width: 650px;
+}
+
+.addcard {
+}
+/* .addcard__wrapper {
+  display: flex;
+  justify-content: space-between;
+} */
+.add__new-card {
+	border: 1px solid transparent;
+	border-radius: 5px;
+	padding: 15px;
+	width: 20%;
+	text-align: center;
+	background-color: #ebeeef;
+}
+
+.add__new-card:hover {
+	border: 1px solid aqua;
+}
+
+.add__new-card img {
+	width: 25%;
+}
+/* .logged__card {
+  background-color: #13a024;
+  width: 25%;
+}
+.logged__card-user {
+  display: flex;
+  justify-content: space-between;
+}
+.logged__card-user img {
+  max-width: 30%;
+  height: auto;
+} */
+.main__card-banks-list {
+	display: flex;
+	max-width: 100%;
+	height: auto;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.main__card-wrapper {
+	display: flex;
+}
+.main__card-span-block {
+	opacity: 0.8;
+	display: block;
+	margin-bottom: 15px;
+}
+
+.main__card .main__card-span-block {
+	opacity: 0.6;
+}
+
+.main__card-span-block:first-child {
+	margin-bottom: 5px;
+}
+
+.cardNumber {
+	width: 90%;
+	padding: 5px 0;
+}
+.expDate {
+	text-align: center;
+	width: 10%;
+	padding: 5px 0;
+	margin-right: 10px;
+}
+
+.expDate:last-child {
+	margin-left: 10px;
+	margin-right: 0;
+}
+
+.cvcData {
+	text-align: center;
+	width: 75%;
+	padding: 5px 0;
+	margin-bottom: 5px;
+}
+.main__card-data {
+	width: 70%;
+	padding: 35px 20px 20px 20px;
+	border-radius: 5px;
+	z-index: 1;
+	box-shadow: 4px 4px 8px 4px rgb(34 60 80 / 20%);
+}
+
+.main__card-data img {
+	max-width: 100%;
+	object-fit: contain;
+	height: auto;
+}
+
+.main__card-cvc {
+	border-radius: 5px;
+	width: 30%;
+	padding: 20px 20px 20px 20px;
+	background-color: #ebeeef;
+}
+
+.blackline {
+	margin: 25px -20px;
+	width: auto;
+	padding-left: 150px;
+	height: 45px;
+	background-color: #d7dce1;
+}
+
+.main__card-submit {
+	text-align: center;
+}
+
+.main__card-submit input {
+	padding: 10px;
+	width: 100%;
+	background-color: #d7dce1;
+	font-weight: 700;
+	opacity: 0.8;
+	transition: 0.3s;
+}
+
+.main__card-submit:hover {
+	opacity: none;
+}
+
+.main__card-checkbox-span-block {
+	display: block;
+	opacity: 1;
+}
+
+.main__card-checkbox-span-block a {
+	color: blue;
+}
+
+.main__CVC-span-block {
+	display: block;
+	opacity: 0.6;
+}
