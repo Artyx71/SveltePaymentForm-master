@@ -7,7 +7,14 @@
 			.trim();
 	}
 
+	let cardNumber = '';
+	let cardYear = '';
+	let cardMonth = '';
+	let checkedState = false;
+	let cvcCode = '';
+
 	const getRequestURL = 'http://127.0.0.1:5000/api/cards';
+	const postRequestURL = 'http://127.0.0.1:5000/api/card';
 	function sendGetRequest(method, url) {
 		return fetch(url).then((response) => {
 			return response.json();
@@ -15,11 +22,21 @@
 	}
 	sendGetRequest('GET', getRequestURL);
 
-	let cardNumber = '';
-	let cardYear = '';
-	let cardMonth = '';
-	let checkedState = false;
-	let cvcCode = '';
+	function sendPostRequest(method, url, body = null) {
+		const headers = {
+			'Content-Type': 'application/json'
+		};
+		return fetch(url, {
+			method: method,
+			body: JSON.stringify({
+				cardNumber,
+				cardYear,
+				cardMonth,
+				cvcCode
+			})
+		});
+	}
+	sendPostRequest('POST', postRequestURL);
 </script>
 
 <main class="main__card">
